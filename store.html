@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Game Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="storestyle.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- <div class="bgimg">
+            <img src="images/goatsimulator.png" alt="Background Image" class="background active2" id="active2">
+        </div> -->
+      <div class="carousel">
+        <div class="smshit">
+          <div class="slide active">
+            <img src="images/store.png" alt="Image 1" />
+          </div>
+          <div class="slide">
+            <img src="images/store.png" alt="Image 2" />
+          </div>
+          <div class="bloverlay2"></div>
+          <div class="spotlight-info" style="margin-left: 1.6rem">
+            <h1>Goat Simulator 3</h1>
+            <p>
+              Pilgore is back! Gather your herd and head to Goat Simulator 3,<br />
+              a new realistic multiplayer sandbox farming experience.
+            </p>
+          </div>
+          <div class="nav-dots">
+            <div class="dot active" data-slide="0"></div>
+            <div class="dot" data-slide="1"></div>
+          </div>
+        </div>
+      </div>
+<header class="dashboard-header">
+  <div class="lefthead">
+    <div class="back">
+      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="20" viewBox="0 0 12 22" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M10 20 L2 11 L10 2" />
+      </svg>
+    </div>
+
+    <span class="search-bar">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M21 21L15.0001 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="white" stroke-opacity="0.9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <input type="text" placeholder="Search on RizzStation" class="search-input" />
+    </span>
+  </div>
+  <div class="righthead">
+    <nav class="nav-bar">
+        <button class="nav-button active">Browse</button>
+        <button class="nav-button">Collections</button>
+        <button class="nav-button">Offers</button>
+        <button class="nav-button">Purchases</button>
+    </nav>
+    <div class="btsns">
+    <div class="back">
+      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+  <path d="M12.8508 4.80628L11.7707 3.69606C9.23547 1.09 4.58673 1.98932 2.9086 5.26573C2.12076 6.80678 1.943 9.03173 3.38161 11.8713C4.7675 14.6054 7.65074 17.8803 12.8508 21.4475C18.0509 17.8803 20.9327 14.6054 22.32 11.8713C23.7587 9.03022 23.5824 6.80678 22.7931 5.26573C21.1149 1.98932 16.4662 1.08849 13.9309 3.69456L12.8508 4.80628ZM12.8508 23.2627C-10.2468 7.99984 5.73912 -3.91275 12.5857 2.38851C12.6761 2.47187 12.7645 2.55773 12.8508 2.64611C12.9357 2.55717 13.0241 2.47174 13.116 2.39002C19.961 -3.91576 35.9484 7.99834 12.8508 23.2627Z" fill="white"/>
+</svg>
+    </div>
+    <div class="back">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <path d="M0.666504 1.41987C0.666504 1.22011 0.745859 1.02853 0.887111 0.887279C1.02836 0.746026 1.21994 0.666672 1.4197 0.666672H3.6793C3.84731 0.666718 4.01048 0.722937 4.14286 0.826387C4.27525 0.929838 4.36924 1.07458 4.4099 1.2376L5.01999 3.67947H22.5093C22.6199 3.67957 22.7291 3.70403 22.8292 3.7511C22.9292 3.79817 23.0177 3.8667 23.0883 3.95183C23.1589 4.03696 23.2099 4.13658 23.2377 4.24364C23.2654 4.35069 23.2693 4.46255 23.2489 4.57125L20.9893 16.6224C20.957 16.795 20.8654 16.9509 20.7303 17.0631C20.5953 17.1754 20.4253 17.2369 20.2497 17.237H6.69209C6.5165 17.2369 6.34647 17.1754 6.21142 17.0631C6.07636 16.9509 5.98476 16.795 5.95245 16.6224L3.69436 4.59385L3.0918 2.17307H1.4197C1.21994 2.17307 1.02836 2.09371 0.887111 1.95246C0.745859 1.81121 0.666504 1.61963 0.666504 1.41987ZM5.33935 5.18586L7.31725 15.7306H19.6245L21.6024 5.18586H5.33935ZM8.19849 17.237C7.39945 17.237 6.63313 17.5545 6.06812 18.1195C5.50312 18.6845 5.1857 19.4508 5.1857 20.2498C5.1857 21.0489 5.50312 21.8152 6.06812 22.3802C6.63313 22.9452 7.39945 23.2626 8.19849 23.2626C8.99753 23.2626 9.76385 22.9452 10.3289 22.3802C10.8939 21.8152 11.2113 21.0489 11.2113 20.2498C11.2113 19.4508 10.8939 18.6845 10.3289 18.1195C9.76385 17.5545 8.99753 17.237 8.19849 17.237ZM18.7433 17.237C17.9442 17.237 17.1779 17.5545 16.6129 18.1195C16.0479 18.6845 15.7305 19.4508 15.7305 20.2498C15.7305 21.0489 16.0479 21.8152 16.6129 22.3802C17.1779 22.9452 17.9442 23.2626 18.7433 23.2626C19.5423 23.2626 20.3086 22.9452 20.8736 22.3802C21.4387 21.8152 21.7561 21.0489 21.7561 20.2498C21.7561 19.4508 21.4387 18.6845 20.8736 18.1195C20.3086 17.5545 19.5423 17.237 18.7433 17.237ZM8.19849 18.7434C8.59801 18.7434 8.98117 18.9022 9.26368 19.1847C9.54618 19.4672 9.70489 19.8503 9.70489 20.2498C9.70489 20.6494 9.54618 21.0325 9.26368 21.315C8.98117 21.5975 8.59801 21.7562 8.19849 21.7562C7.79897 21.7562 7.41581 21.5975 7.13331 21.315C6.8508 21.0325 6.69209 20.6494 6.69209 20.2498C6.69209 19.8503 6.8508 19.4672 7.13331 19.1847C7.41581 18.9022 7.79897 18.7434 8.19849 18.7434ZM18.7433 18.7434C19.1428 18.7434 19.526 18.9022 19.8085 19.1847C20.091 19.4672 20.2497 19.8503 20.2497 20.2498C20.2497 20.6494 20.091 21.0325 19.8085 21.315C19.526 21.5975 19.1428 21.7562 18.7433 21.7562C18.3438 21.7562 17.9606 21.5975 17.6781 21.315C17.3956 21.0325 17.2369 20.6494 17.2369 20.2498C17.2369 19.8503 17.3956 19.4672 17.6781 19.1847C17.9606 18.9022 18.3438 18.7434 18.7433 18.7434Z" fill="white"/>
+</svg>
+    </div>
+    </div>
+</div>
+
+</header>
+
+
+
+      <main>
+        <div class="recently-played">
+          <div class="games-container">
+            <div class="games-grid grid1">
+              <div class="game-card2" style="margin-left: 3rem">
+                <div class="card-content">
+                  <div class="card-icon">
+                    <img src="images/survivalsvg.svg" />
+                  </div>
+                  <h3 class="card-title">SURVIVAL</h3>
+                </div>
+              </div>
+
+              <div class="game-card2">
+                <div class="card-content">
+                  <div class="card-icon">
+                    <img src="images/survivalsvg.svg" />
+                  </div>
+                  <h3 class="card-title">SURVIVAL</h3>
+                </div>
+              </div>
+              <div class="game-card2">
+                <div class="card-content">
+                  <div class="card-icon">
+                    <img src="images/survivalsvg.svg" />
+                  </div>
+                  <h3 class="card-title">SURVIVAL</h3>
+                </div>
+              </div>
+              <div class="game-card2"></div>
+              <div class="game-card2"></div>
+              <div class="game-card2"></div>
+              <div class="game-card2"></div>
+              <div class="game-card2"></div>
+              <div class="game-card2"></div>
+              <div class="game-card2"></div>
+              <div class="game-card2"></div>
+              <div class="game-card2"></div>
+              <div class="game-card2"></div>
+              <div class="game-card2"></div>
+              <div class="game-card2"></div>
+            </div>
+
+            <h1 class="plgamestext" style="margin-left: 3.4rem">
+              Games Included In <a class="green2">EkanshPro</a>
+            </h1>
+            <div class="games-grid grid2" style="padding-bottom: 2rem;">
+<div class="game-card" style="margin-left: 3rem"><img src="images/game1.png" alt="Game 1"></div>
+  <div class="game-card"><img src="images/game2.png" alt="Game 2"></div>
+  <div class="game-card"><img src="images/game3.png" alt="Game 3"></div>
+  <div class="game-card"><img src="images/game4.png" alt="Game 4"></div>
+  <div class="game-card"><img src="images/game5.png" alt="Game 5"></div>
+  <div class="game-card"><img src="images/game6.png" alt="Game 6"></div>
+  <div class="game-card"><img src="images/game7.png" alt="Game 7"></div>
+  <div class="game-card"><img src="images/game8.png" alt="Game 8"></div>
+  <div class="game-card"><img src="images/game9.png" alt="Game 9"></div>
+  <div class="game-card"><img src="images/game10.png" alt="Game 10"></div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
+
+<script>
+  const navButtons = document.querySelectorAll('.nav-button');
+
+navButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    // Remove active class from all buttons
+    document.querySelector('.nav-button.active')?.classList.remove('active');
+    
+    // Add active class to clicked button
+    button.classList.add('active');
+  });
+});
+
+  clicked = false;
+  const notifs = document.querySelector(".notifs");
+  const bloverlay = document.querySelector(".bloverlay");
+  document.querySelector(".bloverlay")?.addEventListener("click", function () {
+    console.log("Keyy SVG clicked!");
+    console.log("clicked:", clicked);
+
+    if (!clicked) {
+    } else {
+    }
+  });
+
+  let selectedIndex = 0;
+  let cards = document.querySelectorAll(".game-card");
+  let canMove = true;
+
+  function updateSelection() {
+    console.log(`Selected card index: ${selectedIndex}`);
+    cards.forEach((c, i) => {
+      c.classList.toggle("selected", i === selectedIndex);
+    });
+  }
+
+  function gameLoop() {
+    const gamepads = navigator.getGamepads();
+
+    if (gamepads[2]) {
+      let gp = gamepads[2];
+      console.log("Gamepad state:", gp.axes);
+
+      if (gp.axes[0] > 0.5 && canMove) {
+        console.log("→ Moving Right");
+        selectedIndex = (selectedIndex + 1) % cards.length;
+        updateSelection();
+        canMove = false;
+      }
+      if (gp.axes[0] < -0.5 && canMove) {
+        console.log("← Moving Left");
+        selectedIndex = (selectedIndex - 1 + cards.length) % cards.length;
+        updateSelection();
+        canMove = false;
+      }
+      if (Math.abs(gp.axes[0]) < 0.2) {
+        if (!canMove)
+          console.log("Joystick returned to center → can move again");
+        canMove = true;
+      }
+    }
+    requestAnimationFrame(gameLoop);
+  }
+
+  window.addEventListener("gamepadconnected", (e) => {
+    console.log("Controller connected:", e.gamepad.id);
+    gameLoop();
+  });
+</script>
+
+<script>
+  class TwoImageCarousel {
+    constructor() {
+      this.slides = document.querySelectorAll(".slide");
+      this.dots = document.querySelectorAll(".dot");
+      this.currentSlide = 0;
+      this.autoInterval = null;
+
+      this.init();
+    }
+
+    init() {
+      this.setupDotNavigation();
+      this.startAutoPlay();
+      this.setupHoverPause();
+    }
+
+    showSlide(index) {
+      // Remove active class from all
+      this.slides.forEach((slide) => slide.classList.remove("active"));
+      this.dots.forEach((dot) => dot.classList.remove("active"));
+
+      // Add active class to current
+      this.slides[index].classList.add("active");
+      this.dots[index].classList.add("active");
+
+      // Change text based on slide
+      const spotlight = document.querySelector(".spotlight-info");
+      if (spotlight) {
+        const h1 = spotlight.querySelector("h1");
+        const p = spotlight.querySelector("p");
+        // Remove previous animation class
+        h1.classList.remove("fade-text");
+        p.classList.remove("fade-text");
+        // Change text
+
+        h1.textContent = "Goat Simulator 3";
+        p.innerHTML =
+          "Pilgore is back! Gather your herd and head to Goat Simulator 3,<br> a new realistic multiplayer sandbox farming experience.";
+
+        // Force reflow and add animation class
+        void h1.offsetWidth;
+        void p.offsetWidth;
+        h1.classList.add("fade-text");
+        p.classList.add("fade-text");
+      }
+
+      this.currentSlide = index;
+    }
+
+    nextSlide() {
+      const next = this.currentSlide === 0 ? 1 : 0; // Toggle between 0 and 1
+      this.showSlide(next);
+    }
+
+    startAutoPlay() {
+      this.autoInterval = setInterval(() => {
+        this.nextSlide();
+      }, 5000); // Switch every 4 seconds
+    }
+
+    stopAutoPlay() {
+      if (this.autoInterval) {
+        clearInterval(this.autoInterval);
+      }
+    }
+
+    setupDotNavigation() {
+      this.dots.forEach((dot, index) => {
+        dot.addEventListener("click", () => {
+          this.showSlide(index);
+          this.restartAutoPlay();
+        });
+      });
+    }
+
+    setupHoverPause() {
+      const container = document.querySelector(".carousel-container");
+
+      container.addEventListener("mouseenter", () => {
+        this.stopAutoPlay();
+      });
+
+      container.addEventListener("mouseleave", () => {
+        this.restartAutoPlay();
+      });
+    }
+
+    restartAutoPlay() {
+      this.stopAutoPlay();
+      setTimeout(() => this.startAutoPlay(), 2000); // Resume after 2 seconds
+    }
+  }
+
+  // Initialize when page loads
+  document.addEventListener("DOMContentLoaded", () => {
+    new TwoImageCarousel();
+  });
+</script>
+
+ <!-- <div class="player-container">
+          <div class="controls">
+            <button class="control-button" title="Settings">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11.03L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.5,5.32 14.87,5.07L14.5,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.5,2.42L9.13,5.07C8.5,5.32 7.96,5.66 7.44,6.05L4.95,5.05C4.73,4.96 4.46,5.05 4.34,5.27L2.34,8.73C2.22,8.95 2.27,9.22 2.46,9.37L4.57,11.03C4.53,11.34 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.22,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.94C7.96,18.34 8.5,18.68 9.13,18.93L9.5,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.5,21.58L14.87,18.93C15.5,18.68 16.04,18.34 16.56,17.94L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z"
+                />
+              </svg>
+            </button>
+
+            <button class="control-button" title="Search">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"
+                />
+              </svg>
+            </button>
+
+            <button class="control-button" title="Power">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M16.56,5.44L15.11,6.89C16.84,7.94 18,9.83 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12C6,9.83 7.16,7.94 8.88,6.88L7.44,5.44C5.36,6.88 4,9.28 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12C20,9.28 18.64,6.88 16.56,5.44M13,3H11V13H13"
+                />
+              </svg>
+            </button>
+
+            <button class="control-button play-button" title="Play">
+              <svg viewBox="0 0 24 24">
+                <path d="M8,5.14V19.14L19,12.14L8,5.14Z" />
+              </svg>
+            </button>
+
+            <div class="queue-info">In Queue : 00:56s</div>
+          </div>
+        </div> -->

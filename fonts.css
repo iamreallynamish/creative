@@ -1,0 +1,58 @@
+@font-face {
+  font-family: 'SF Compact Display';
+  src: url('fonts/SF-Compact-Display-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SF Compact Display';
+  src: url('fonts/SF-Compact-Display-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SF Compact Display';
+  src: url('fonts/SF-Compact-Display-Semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* SF Pro Display Fonts */
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('fonts/sf-pro-display-regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('fonts/sf-pro-display-semibold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* Usage Classes */
+.sf-compact-regular {
+  font-family: 'SF Compact Display', Arial, sans-serif;
+  font-weight: 400;
+}
+
+.sf-compact-medium {
+  font-family: 'SF Compact Display', Arial, sans-serif;
+  font-weight: 500;
+}
+
+.sf-compact-semibold {
+  font-family: 'SF Compact Display', Arial, sans-serif;
+  font-weight: 600;
+}
+
+.sf-pro-regular {
+  font-family: 'SF Pro Display', Arial, sans-serif;
+  font-weight: 400;
+}
+
+.sf-pro-semibold {
+  font-family: 'SF Pro Display', Arial, sans-serif;
+  font-weight: 600;
+}

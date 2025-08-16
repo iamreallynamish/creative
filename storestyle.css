@@ -1,0 +1,580 @@
+@font-face {
+  font-family: 'SF Compact Display';
+  src: url('fonts/SF-Compact-Display-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SF Compact Display';
+  src: url('fonts/SF-Compact-Display-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SF Compact Display';
+  src: url('fonts/SF-Compact-Display-Semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* SF Pro Display Fonts */
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('fonts/sf-pro-display-regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('fonts/sf-pro-display-semibold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: "SF Pro Display";
+  font-size: 400;
+  background: black; /* deep background for contrast */
+  color: #fff;
+  overflow: hidden;
+  overflow-y: auto;
+  letter-spacing: 1px;
+}
+
+.grid1 {
+  scroll-snap-align: end;
+  scroll-snap-stop: always;
+
+}
+.grid2 {
+  scroll-snap-align: end;
+  scroll-snap-stop: always;
+
+}
+.container {
+    overflow: hidden;
+overflow-y: auto;
+  height: 100dvh;
+  width: 100dvw;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+.carousel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 140%);
+  pointer-events: none;
+}
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 60%;
+  z-index: 8;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.dashboard-header {
+  z-index: 99;
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 32px 0 32px;
+  background: transparent;
+  min-width: 100dvw;
+  align-items: center;
+
+}
+
+.lefthead {
+  display: flex;
+  align-items: center;
+
+  background: transparent;
+}
+
+.back {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  margin-right: 1rem;
+}
+
+.search-bar {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  height: 4rem;
+  border-radius: 36.657px;
+  background: linear-gradient(244deg, rgba(0,0,0,0.3) 19.46%, rgba(5,5,5,0.3) 41.03%, rgba(13,13,13,0.3) 74.63%);
+  box-shadow: 0 0 0 .2px white inset;
+  padding-left: 2rem;
+  padding-right: 1rem;
+
+}
+
+.lefthead, .righthead {
+    display: flex;
+    max-width: 45%;
+}
+.righthead{
+  align-items: end;
+}
+
+.nav-bar {
+    position: relative;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    height: 4rem;
+    border-radius: 36.657px;
+    background: linear-gradient(244deg, rgba(0,0,0,0.3) 19.46%, rgba(5,5,5,0.3) 41.03%, rgba(13,13,13,0.3) 74.63%);
+    box-shadow: 0 0 0 .2px white inset;
+    padding: 0.5rem;
+    gap: 0.5rem;
+    max-width: max-content;
+    justify-content: center;
+}
+
+.nav-button {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: 32px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    white-space: nowrap;
+    transform: scale(1);
+}
+
+.nav-button:hover {
+    color: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.02);
+}
+
+.games-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 20px;
+}
+.nav-button.active {
+    color: white;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+}
+
+.nav-button:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+}
+
+
+.search-bar svg {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.search-input {
+  flex: 1;
+  height: 100%;
+  background: transparent;
+  border: none;
+  padding: 0 1rem;
+  color: #FFF;
+  font-family: "SF Compact Display";
+  font-size: 1.6rem;
+  font-weight: 400;
+  opacity: 0.7;
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: #FFF;
+  opacity: 0.5;
+}
+
+.search-input:focus {
+  opacity: 1;
+}
+
+.lefthead, .righthead{
+  display: flex;
+  width: 50%;
+}
+.player-container {
+  position: relative;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 50px;
+  padding: 8px 26px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+.btsns{
+  display: flex;
+  margin-left: 3rem;
+}
+
+.back{
+  aspect-ratio: 1;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 1000px;
+
+  background: linear-gradient(244deg, rgba(0,0,0,0.3) 19.46%, rgba(5,5,5,0.3) 41.03%, rgba(13,13,13,0.3) 74.63%);
+  box-shadow: 0 0 0 .2px white inset;
+
+}
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.control-button {
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.control-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
+}
+
+.control-button:active {
+  transform: scale(0.95);
+}
+
+.control-button svg {
+  width: 20px;
+  height: 20px;
+  fill: #ffffff;
+}
+
+.play-button {
+  width: 48px;
+  height: 48px;
+}
+
+.play-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+.queue-info {
+  color: #ffd700;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  font-family: "SF Compact Display";
+  font-weight: 600;
+}
+
+.recently-played {
+  margin: 35px 32px 0 32px;
+}
+
+.recently-played h2 {
+  margin-bottom: 12px;
+  font-size: 1.29rem;
+  color: #bcbcbc;
+}
+
+.recently-played-carousel {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #4ebfa4 #202542;
+  padding-bottom: 10px;
+}
+
+/* Carousel Scroll Snap (optional for smooth scroll pages) */
+.recently-played-carousel {
+  scroll-snap-type: x mandatory;
+}
+.games-wrapper {
+  width: 100dvw;
+
+  z-index: 1;
+  margin: 0;
+}
+.games-container {
+  width: 100dvw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 32px;
+}
+.plgamestext {
+  display: block;
+  width: 97%;
+  margin-left: 2rem;
+  color: #fff;
+  font-size: 38px;
+  font-style: normal;
+  font-weight: 556;
+  line-height: 100%; /* 48px */
+  margin-top: 3.5rem;
+  margin-bottom: 1rem;
+    font-family: "SF Compact Display";
+  font-weight: 600;
+
+}
+.green2{
+  color: #43D75F;
+}
+.games-grid {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  padding: 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  width: 100%;
+  flex-direction: row;
+}
+
+.games-grid::-webkit-scrollbar {
+  display: none;
+}
+.spotlight {
+  position: relative;
+  margin-top: 24px;
+  height: 380px;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.spotlight-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.65) blur(0px);
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+.game-card {
+  flex: 0 0 auto;
+  width: 10rem;
+  aspect-ratio: 128/193;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  backdrop-filter: blur(10px);
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+.game-card2 {
+  flex: 0 0 auto;
+  height: 228px;
+  width: 300px;
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  backdrop-filter: blur(40px);
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Prevents blur overflow */
+  font-size: "SF Compact";
+}
+
+/* Background image layer - this gets blurred */
+.game-card2::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background: url(images/mcraft.png);
+  background-size: cover;
+  background-position: center;
+
+  /* Only the background gets blurred and darkened */
+  filter: blur(4px) brightness(0.3);
+
+  border-radius: 20px;
+  z-index: 1;
+  font-size: "SF Compact";
+}
+
+/* Dark overlay layer */
+.game-card2::after {
+  font-size: "SF Compact";
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  z-index: 2;
+}
+
+/* Content layer - stays sharp */
+.card-content {
+  font-size: "SF Compact";
+  position: relative;
+  z-index: 3; /* Above the blurred background */
+  text-align: center;
+  color: white;
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8));
+}
+
+.card-title {
+  font-size: "SF Compact Display";
+  font-weight: 400;
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  color: #ffffff;
+
+}
+
+.spotlight-info {
+  position: absolute;
+  bottom: 50px;
+  z-index: 2;
+  padding: 48px 40px;
+  left: 2.5rem;
+}
+
+.spotlight-info h1 {
+  margin: 0 0 14px 0;
+  font-size: 3.7rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 0;
+  font-family: "SF Compact Display";
+  font-weight: 600;
+}
+
+.spotlight-info p {
+  font-size: 1.9rem;
+  color: #e7e7e7;
+  max-width: fit-content;
+  margin: 0;
+}
+.spotlight-info .fade-text {
+  animation: fadeText 0.5s;
+}
+
+.nav-dots {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.dot {
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 29px; /* Default width */
+}
+
+.dot.active {
+  background: rgba(255, 255, 255, 0.9);
+  width: 60px; /* Longer when active, like your image */
+}
+
+.dot:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+.bloverlay2 {
+  position: absolute;
+  width: 100%;
+  height: 350px;
+  flex-shrink: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.95) 88.45%
+  );
+  bottom: 0;
+}

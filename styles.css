@@ -1,0 +1,704 @@
+@font-face {
+  font-family: 'SF Compact Display';
+  src: url('fonts/SF-Compact-Display-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SF Compact Display';
+  src: url('fonts/SF-Compact-Display-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SF Compact Display';
+  src: url('fonts/SF-Compact-Display-Semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* SF Pro Display Fonts */
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('fonts/sf-pro-display-regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('fonts/sf-pro-display-semibold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+/* Reset and General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: "SF Pro Display";
+  font-weight: 400;
+  background: #181d2b; /* deep background for contrast */
+  color: #fff;
+  overflow: hidden;
+  letter-spacing: 1px;
+}
+
+.container {
+  height: 100dvh;
+  width: 100dvw;
+}
+.bloverlay {
+  opacity: 0.96;
+  background: linear-gradient(271deg, #121212 0.82%, rgba(0, 0, 0, 0) 99.18%);
+  width: 135px;
+  height: 400px;
+  flex-shrink: 0;
+  position: absolute;
+  left: 0;
+  z-index: 999999999999999999999999999999999;
+  opacity: 1;
+
+}
+.bgimg {
+  position: absolute;
+  height: 100vh;
+  width: 100;
+  overflow: hidden;
+  z-index: -100000;
+}
+.bgimg > img {
+  width: 100%;
+  opacity: 1;
+}
+.carousel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 140%);
+  pointer-events: none;
+}
+/* Header */
+.dashboard-header {
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 32px 0 32px;
+  background: transparent;
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.welcome {
+  font-size: 1rem;
+  color: #adadad;
+  display: block;
+}
+
+.username {
+  font-size: 1.12rem;
+  font-weight: bold;
+}
+.keyy {
+  width: 100%;
+  margin-top: -35px;
+  margin-bottom: -35px;
+  z-index: 1000;
+  transform: scale(0.8);
+  margin-left: -75px;
+}
+.nav-dots {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.dot {
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 29px; /* Default width */
+}
+
+.dot.active {
+  background: rgba(255, 255, 255, 0.9);
+  width: 60px; /* Longer when active, like your image */
+}
+
+.dot:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+.notifs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 25vw;
+  background-size: 100%;
+
+  position: absolute;
+  top: 24px;
+  right: 30px;
+  right: -25%;
+  transform-origin: top right;
+  transform: scale(1.2);
+  z-index: 100000;
+}
+
+.see{
+  opacity: 0;
+}
+@keyframes notifspop {
+  0% {
+    opacity: 0.6;
+    right: -25%;
+  }
+  100% {
+    right: 30px;
+    opacity: 1;
+  }
+}
+@keyframes appear {
+  0% {
+    opacity: 1;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+}
+.notifspop {
+  transform: translateY(-30px);
+}
+.notifsdis {
+  animation: notifspop 1.5s ease-in-out backwards;
+}
+.apper {
+  animation: appear 0.3s ease-in-out forwards;
+  opacity: 1;
+}
+.disappear {
+  animation: appear 0.5s ease-in-out backwards;
+  opacity: 1;
+}
+.containernotifs {
+  position: relative;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 30px;
+  padding: 16px 32px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  width: 100%;
+}
+
+.control-button {
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.control-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
+}
+
+.control-button:active {
+  transform: scale(0.95);
+}
+
+.control-button svg {
+  width: 20px;
+  height: 20px;
+  fill: #ffffff;
+}
+
+.play-button {
+  width: 48px;
+  height: 48px;
+}
+
+.play-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+.queue-info {
+  color: #ffd700;
+  font-size: 16px;
+    font-family: "SF Compact Display";
+
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+.friend-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: black;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.friend-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.friend-name {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 4px;
+  font-family: "SF Pro Display";
+}
+
+.friend-status {
+  color: #43d75f;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-weight: 400;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #43d75f;
+  flex-shrink: 0;
+  margin-top: 2.6px;
+}
+
+.status-dot.offline {
+  background: #aeaeae;
+}
+.friend-status .offline {
+  color: #aeaeae;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-weight: 400;
+}
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.action-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(10px);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.action-btn.add-btn {
+  border-radius: 37.521px;
+  color: #46e363;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 0;
+  width: auto;
+  padding: 6px 12px;
+  text-transform: capitalize;
+}
+.message-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.message-icon img {
+  width: 19px;
+  height: 19px;
+}
+.charges {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.verified {
+  color: #4ebfa4;
+  font-size: 1rem;
+  margin-left: 6px;
+}
+
+.top-nav {
+  display: flex;
+  align-items: center;
+}
+
+.top-nav input[type="search"] {
+  border: none;
+  border-radius: 20px;
+  padding: 6px 14px;
+  background: #232941;
+  color: #fff;
+  margin-right: 10px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.play-btn {
+  background: #4ebfa4;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  margin-right: 14px;
+  cursor: pointer;
+}
+
+.queue-status {
+  background: #2a3350;
+  color: #fc0;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.98rem;
+}
+
+/* Spotlight Game Section */
+.spotlight {
+  position: relative;
+  margin-top: 24px;
+  height: 380px;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.spotlight-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.65) blur(0px);
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+.game-card.selected {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px cyan;
+}
+.spotlight-info {
+  position: relative;
+  z-index: 2;
+  padding: 48px 40px;
+}
+
+.spotlight-info h1 {
+  margin: 0 0 14px 0;
+  font-size: 3.7rem;
+  font-family: "SF Compact Display";
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 0;
+}
+
+.games-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 20px;
+}
+.spotlight-info p {
+  font-size: 1.9rem;
+  color: #e7e7e7;
+  max-width: fit-content;
+  margin: 0;
+}
+.spotlight-info .fade-text {
+  animation: fadeText 0.5s;
+}
+
+@keyframes fadeText {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Recently Played Carousel */
+.recently-played {
+  margin: 35px 32px 0 32px;
+}
+
+.recently-played h2 {
+  margin-bottom: 12px;
+  font-size: 1.29rem;
+  color: #bcbcbc;
+}
+
+.recently-played-carousel {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #4ebfa4 #202542;
+  padding-bottom: 10px;
+}
+
+/* Carousel Scroll Snap (optional for smooth scroll pages) */
+.recently-played-carousel {
+  scroll-snap-type: x mandatory;
+}
+.game-card {
+  scroll-snap-align: center;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+  .dashboard-header,
+  .recently-played {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .spotlight-info {
+    padding: 28px 14px;
+  }
+  .spotlight {
+    height: 240px;
+  }
+}
+
+.player-container {
+  position: relative;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 50px;
+  padding: 8px 26px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.notifs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 25vw;
+  background-size: 100%;
+  position: absolute;
+  top: 24px;
+  right: -25vw; /* Start off-screen */
+  transform-origin: top right;
+  transform: scale(1.2);
+  transition: right 0.5s ease-out, opacity 0.5s;
+  opacity: 0.7;
+}
+
+.notifs.active {
+  right: 30px;   /* Slide in */
+  opacity: 1;
+}
+.control-button {
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.control-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
+}
+
+.control-button:active {
+  transform: scale(0.95);
+}
+
+.control-button svg {
+  width: 20px;
+  height: 20px;
+  fill: #ffffff;
+}
+
+.play-button {
+  width: 48px;
+  height: 48px;
+}
+
+.play-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+.queue-info {
+  color: #ffd700;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+.plgamestext {
+  margin: 0;
+  color: #ffffff;
+  font-size: 2.5rem;
+    font-family: "SF Compact Display";
+
+  font-weight: 600;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.games-wrapper {
+  width: 100vw;
+  left: 0;
+  position: absolute;
+  bottom: 3rem;
+  z-index: 1;
+  margin: 0;
+}
+
+.games-grid {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  padding: 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  width: 100%;
+}
+
+.games-grid::-webkit-scrollbar {
+  display: none;
+}
+
+.game-card {
+  flex: 0 0 auto;
+  width: 10rem;
+  aspect-ratio: 128/193;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  backdrop-filter: blur(10px);
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.carousel-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  background: #2a2a2a;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: -99999999999999;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
