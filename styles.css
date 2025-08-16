@@ -69,6 +69,14 @@ body {
   overflow: hidden;
   z-index: -100000;
 }
+.button-link {
+  text-decoration: none;
+  display: inline-block;
+}
+
+.button-link:hover {
+  text-decoration: none;
+}
 .bgimg > img {
   width: 100%;
   opacity: 1;
